@@ -130,8 +130,10 @@ function Home() {
   const handleStart = () => {
     SpeechRecognition.startListening({ continuous: true });
     setMicOne(true)
-
+  handleOpenVideo()
   }
+
+
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
@@ -142,6 +144,7 @@ function Home() {
     setTypeValue('')
     setMicOne(false)
     resetTranscript()
+    stopVideo()
   };
 
 
@@ -154,7 +157,7 @@ function Home() {
         <div className="camara">
 
           <div className="section">
-            {isVideoOpen ? (
+            {/* {isVideoOpen ? ( */}
               <div>
                 <div className='app__video' style={{ position: 'relative' }}>
                   <video ref={videoRef} autoPlay width={480} height={360} style={{display:'none'}}></video>
@@ -163,16 +166,17 @@ function Home() {
                     top: -40,
                     left: 50,
                     width: '400px',
-                    height: '400px'
+                    height: '400px',
+                    display:'none'
                   }} />
                 </div>
-                <div style={{backgroundColor:'red'}}>
+                {/* <div style={{backgroundColor:'red'}}>
                   <button className='close-btn' onClick={stopVideo}>Close Video</button>
-                </div>
+                </div> */}
               </div>
-            ) : (
-              <button className='open-btn' onClick={handleOpenVideo}>Open Video</button>
-            )}
+            {/* ) : ( */}
+              {/* <button className='open-btn' onClick={handleOpenVideo}>Open Video</button> */}
+            {/* )} */}
           </div>
 
 
