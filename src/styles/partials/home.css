@@ -1,0 +1,251 @@
+.home-page{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+.video-section{
+    width: 100%;
+    height: 70%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mice-section{
+    width: 100%;
+    height: 30%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.center-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.keyboard{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(198, 198, 198);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.mice-section span{
+    display: flex;
+    justify-content: center;
+}
+.keyboard input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+}
+.mice{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(116, 240, 62);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.mice span .MuiSvgIcon-root{
+font-size: 40px !important;
+}
+.a{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid  rgb(116, 240, 62);
+    display: flex;
+    animation: widthAnimation 1s infinite alternate; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+   
+}
+.b{
+    width: 150px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid  rgb(116, 240, 62);
+    display: flex;
+    animation: widthAnimation2 1s infinite alternate; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+}
+@keyframes widthAnimation {
+    0% {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+    }
+    100% {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+}
+@keyframes widthAnimation2 {
+    0% {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+    100% {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+    }
+}
+
+.close{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   border: 1px solid gainsboro;
+}
+
+.camara{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+.voice-contants{
+    height: 30%;
+
+}
+
+
+.open-btn{
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .close-btn{
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  
+  }
+
+  
+
+
+  .voice-contants{
+    height: 300px;
+    display: flex;
+  }
+
+
+  @media(max-width:600px){
+
+    .center-item{
+      
+        gap: 30px;
+    }
+    .keyboard{
+        width: 40px;
+        height: 40px;
+        background-color: rgb(198, 198, 198);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+   
+   
+    .mice{
+        width: 80px;
+        height: 80px;
+       
+    
+    }
+    .mice span .MuiSvgIcon-root{
+    font-size: 40px !important;
+    }
+    .close{
+        width: 40px;
+        height: 40px;
+      
+    }
+
+
+
+    @keyframes widthAnimation {
+        0% {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+        100% {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    }
+    @keyframes widthAnimation2 {
+        0% {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        100% {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+    }
+
+    .voice-contants p{
+        max-width: 200px;
+        text-align: center;
+      }
+  }
