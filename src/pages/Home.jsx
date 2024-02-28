@@ -66,10 +66,36 @@ function Home() {
     setIsVideoOpen(false);
   };
 
-  const faceDetection = async () => {
-    setInterval(async () => {
-      const detections = await faceapi.detectAllFaces(videoRef.current, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions().withAgeAndGender();
 
+  const faceDetection = async () => {
+    // setInterval(async () => {
+    //   const detections = await faceapi.detectAllFaces(videoRef.current, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions().withAgeAndGender();
+
+    //   const canvas = canvasRef.current;
+    //   const displaySize = { width: videoRef.current.width, height: videoRef.current.height };
+    //   faceapi.matchDimensions(canvas, displaySize);
+
+    //   const resizedDetections = faceapi.resizeResults(detections, displaySize);
+
+    //   faceapi.draw.drawDetections(canvas, resizedDetections);
+    //   faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+    //   faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
+
+    //   setFaceData(resizedDetections.map(face => ({
+    //     gender: face.gender,
+    //     age: face.age,
+    //     expressions: face.expressions,
+    //     landmarks: face.landmarks,
+    //   })));
+
+    // }, 1000)
+
+  //  new code
+    let intervalId;
+
+    intervalId = setInterval(async () => {
+      const detections = await faceapi.detectAllFaces(videoRef.current, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions().withAgeAndGender();
+      
       const canvas = canvasRef.current;
       const displaySize = { width: videoRef.current.width, height: videoRef.current.height };
       faceapi.matchDimensions(canvas, displaySize);
@@ -87,7 +113,14 @@ function Home() {
         landmarks: face.landmarks,
       })));
 
-    }, 1000)
+      // Check if faces are detected
+      if (resizedDetections.length > 0) {
+        // Stop the camera and clear interval
+        stopVideo();
+        clearInterval(intervalId);
+      }
+
+    }, 1000);
   }
 
   const handleOpenVideo = () => {
@@ -147,12 +180,8 @@ function Home() {
       setMicOne(false)
       resetTranscript()
       stopVideo()
-   
-
-
-
-
   };
+
 
 
 
