@@ -271,7 +271,7 @@ function Home() {
             style={{ display: "none", position: "absolute" }}
           />
 
-          <div className="voice-contants">
+          <div className="voice-contants" style={{backgroundImage:`url(${"https://img.freepik.com/free-photo/product-showcase-with-spotlight-black-studio-room-background-use-as-montage-product-display_1258-108783.jpg?t=st=1709293397~exp=1709296997~hmac=43f9da34ecd2745eab227be7afcc71a563d5a7124ef3a36441c825b1e55c23a8&w=1060"})`}}>
             {apiData?.length === 0 ? (
               ""
             ) : (
